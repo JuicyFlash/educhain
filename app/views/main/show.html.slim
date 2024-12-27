@@ -1,0 +1,4 @@
+h1
+  = "Hello  #{Current.user.email_address}"
+.logout
+  = button_to "Выход", session_path, method: :delete
