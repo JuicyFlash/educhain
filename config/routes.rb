@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "courses/index"
   resource :session
   resources :passwords, param: :token
 
@@ -7,5 +8,5 @@ Rails.application.routes.draw do
   get :sign_up, to: "users#new"
   post :sign_up, to: "users#create"
 
-  root "main#show"
+  root "courses#index"
 end

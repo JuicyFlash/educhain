@@ -65,3 +65,5 @@ end
 gem "tailwindcss-rails", "~> 3.0"
 
 gem "slim-rails", "~> 3.6"
+
+gem "view_component"
