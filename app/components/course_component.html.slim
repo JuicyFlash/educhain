@@ -1,1 +1,13 @@
-div Add Course template here
+div class = content
+  h2
+    = "#{@item_counter}. #{@item.title}"
+  h4
+    =  number_to_currency(@item.price, :unit => "€")
+  h4 
+    = @item.location
+
+  = render(DiscountComponent.new(item: @item))
+  
+  p
+    a href='#'
+      = @notice
