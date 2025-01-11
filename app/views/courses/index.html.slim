@@ -1,5 +1,10 @@
 .mx-auto.py-10 class="w-[450px]"
   .cources
     = render(@courses)
+  .available-cources 
+    = render ListComponent.new do |c| 
+      - c.with_header do
+        = link_to "List of Available Courses", root_path
+      = c.with_titles(@course_titles)
   .logout
     = button_to "Выход", session_path, method: :delete
