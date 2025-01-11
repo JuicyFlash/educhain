@@ -1,12 +1,16 @@
-div class = content
-  h2
+.border.rounded.pl-3.my-4.bg-stone-100
+  h2  
     = "#{@item_counter}. #{@item.title}"
+
   h4
     =  number_to_currency(@item.price, :unit => "€")
+  
   h4 
     = @item.location
 
   = render(DiscountComponent.new(item: @item))
+
+  = EnrolleeComponent.new.total_enrollees(@item)
   
   p
     a href='#'

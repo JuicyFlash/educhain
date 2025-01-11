@@ -5,6 +5,10 @@ class DiscountComponent < ViewComponent::Base
     @item = item
   end
 
+  def before_render
+    @star_icon = helpers.star_icon
+  end
+
   def render?
     @item.price >= 100
   end
