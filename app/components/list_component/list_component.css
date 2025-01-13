@@ -1,0 +1,11 @@
+@layer components {
+  .list{
+    @apply border rounded-lg text-center bg-stone-100;
+  }
+  .list-header {
+    @apply border-b-4 pl-3 my-1;
+  }
+  .title{
+    @apply hover:bg-gray-200 hover:text-gray-700 rounded space-x-2
+  }
+}

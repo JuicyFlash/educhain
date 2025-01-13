@@ -1,7 +1,7 @@
 .mx-auto.py-10 class="w-[450px]"
   .cources
-    = render(@courses)
-  .available-cources 
+    = render CourseComponent.with_collection(@courses, notice: "Buy Me")   
+  .cources-list
     = render ListComponent.new do |c| 
       - c.with_header do
         = link_to "List of Available Courses", root_path

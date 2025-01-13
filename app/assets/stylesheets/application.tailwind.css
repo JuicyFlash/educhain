@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "../../components/course_component/course_component";
+@import "../../components/discount_component/discount_component";
+@import "../../components/list_component/list_component";
 
  /*base links inputs and buttons*/
  @layer components {
@@ -31,6 +35,6 @@
   /*page-link*/
 
   .page-link{
-    @apply px-2 py-1 text-gray-400 hover:bg-gray-200 hover:text-gray-700 rounded row space-x-2;
+    @apply px-2 py-1 text-gray-400 hover:bg-gray-200 hover:text-gray-700 rounded space-x-2;
   }
 }

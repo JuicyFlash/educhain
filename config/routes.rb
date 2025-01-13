@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount Lookbook::Engine, at: "/lookbook"
+  end
+
   get "courses/index"
   resource :session
   resources :passwords, param: :token

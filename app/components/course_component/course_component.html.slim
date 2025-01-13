@@ -1,4 +1,4 @@
-.border.rounded.pl-3.my-4.bg-stone-100
+.course
   h2  
     = "#{@item_counter}. #{@item.title}"
 
@@ -12,6 +12,5 @@
 
   = EnrolleeComponent.new.total_enrollees(@item)
   
-  p
-    a href='#'
-      = @notice
+  p.my-2
+    = link_to @notice, '#', class: 'clean buy-link'

@@ -1,0 +1,5 @@
+@layer components {
+  .discount {
+    @apply flex text-green-700;
+  }
+}  

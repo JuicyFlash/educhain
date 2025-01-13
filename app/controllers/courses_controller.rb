@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    @courses = CourseComponent.with_collection(Course.all, notice: "Buy Me")
+    @courses = Course.all
     @course_titles = Course.all.pluck(:title).map { |title| { title: title } }
   end
 end

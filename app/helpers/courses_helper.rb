@@ -5,6 +5,6 @@ module CoursesHelper
   end
 
   def star_icon
-    tabler_icon 'star-filled', color: :orange, size: 20, class: 'filled'
+    tabler_icon 'star-filled', color: :orange, size: 20
   end
 end
