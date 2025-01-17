@@ -1,0 +1,5 @@
+@layer components {
+  .message{
+    @apply content-center w-fit mx-2 my-2 px-2 py-2 border rounded-lg bg-sky-100;
+  }
+}
