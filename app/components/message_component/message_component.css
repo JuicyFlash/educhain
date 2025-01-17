@@ -1,5 +1,11 @@
 @layer components {
   .message{
-    @apply content-center w-fit mx-2 my-2 px-2 py-2 border rounded-lg bg-sky-100;
+    @apply flex content-center w-fit mx-2 my-2 px-2 py-2 border rounded-lg bg-green-200;    
+  }
+  .message:not(.recent){
+    @apply  bg-sky-100;
+  }
+  .info{
+    @apply text-sm font-light mx-4 -mt-2 italic;
   }
 }

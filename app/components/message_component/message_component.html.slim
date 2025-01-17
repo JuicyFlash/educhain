@@ -1,7 +1,10 @@
-.message.flex id="message-#{@id}"
-  - if @current_user == @message.user && !@broadcast
-    = link_to edit_message_path(@message), class: "clean", data: { turbo_stream: :true }
+.flex.flex-col.message-box id="message-#{@id}"
+  .message class = "#{recent_message}"
+    - if @current_user == @message.user && !@broadcast
+      = link_to edit_message_path(@message), class: "clean", data: { turbo_stream: :true }
+        = @text    
+    - else 
       = @text
-  - else 
-    = @text  
-  = render DeleteMessageComponent.new(message: @message, broadcast: @broadcast)
+    = render DeleteMessageComponent.new(message: @message, broadcast: @broadcast)
+  .info
+    = "#{timestamp} от #{from}"
