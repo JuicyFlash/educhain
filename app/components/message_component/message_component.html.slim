@@ -1,7 +1,7 @@
 .message.flex id="message-#{@id}"
-  - if Current.user == @message.user
+  - if @current_user == @message.user && !@broadcast
     = link_to edit_message_path(@message), class: "clean", data: { turbo_stream: :true }
-      = @text 
+      = @text
   - else 
-    = @text   
-  = render DeleteMessageComponent.new(message: @message)
+    = @text  
+  = render DeleteMessageComponent.new(message: @message, broadcast: @broadcast)

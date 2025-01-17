@@ -7,7 +7,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Current.user.messages.new(message_params)
-    @message.save
+    if @message.save
+      Broadcast::Message.append(message: @message)
+    end
 
   respond_to do |format|
     format.html { redirect_to messages_path }
@@ -18,6 +20,7 @@ class MessagesController < ApplicationController
   def destroy
     if @message.user == Current.user
       @message.destroy
+      Broadcast::Message.remove(message: @message)
     end
 
     respond_to do |format|
@@ -38,6 +41,11 @@ class MessagesController < ApplicationController
     if Current.user == @message.user
       @updated = @message.update(message_params)
     end
+
+    if @updated
+      Broadcast::Message.update(message: @message)
+    end
+
     respond_to do |format|
       format.html { redirect_to messages_path }
       format.turbo_stream
