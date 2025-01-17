@@ -1,0 +1,9 @@
+.message-form#message-form
+  = form_with model: new_message, method: :post, local: false do |f|
+    .flex-col
+      .label
+        = f.label 'Сообщение'
+      .message-text
+        = f.text_field :text, placeholder: "Введите ваше сообщение", class: "form-control form-control-sm w-full"
+      .message-submit.justify-content-end
+        = f.submit 'Отправить'

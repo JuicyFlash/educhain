@@ -1,8 +1,21 @@
 class MessagesController < ApplicationController
   def index
-    @messages = []
-    @messages << Message.first
-    @messages << Message.first
-    @messages << Message.first
+    @new_message = Message.new
+    @messages = Message.all
+  end
+
+  def create
+    @message = Current.user.messages.new(message_params)
+    @message.save
+  respond_to do |format|
+    format.html { redirect_to messages_path }
+    format.turbo_stream
+  end
+  end
+
+  private
+
+  def message_params
+    params.require(:message).permit(:text)
   end
 end
