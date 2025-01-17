@@ -1,0 +1,3 @@
+- if @updated
+  = turbo_stream.replace "inline-message-form-#{ @message.id }"
+    = render MessageComponent.new(message: @message)

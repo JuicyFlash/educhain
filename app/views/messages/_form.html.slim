@@ -3,7 +3,7 @@
     .flex-col
       .label
         = f.label 'Сообщение'
-      .message-text
+      .message-text.my-2
         = f.text_field :text, placeholder: "Введите ваше сообщение", class: "form-control form-control-sm w-full"
       .message-submit.justify-content-end
         = f.submit 'Отправить'

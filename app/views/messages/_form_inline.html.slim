@@ -1,0 +1,4 @@
+.inline-message-form id="inline-message-form-#{message.id}"
+  = form_with model: message, method: :patch, local: false do |f|
+    .message-text
+      = f.text_field :text, class: "form-control form-control-sm w-full", autofocus: true, onfocus: "this.select()"
