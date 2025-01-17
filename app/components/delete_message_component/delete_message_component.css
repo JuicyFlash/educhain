@@ -1,0 +1,5 @@
+@layer components {
+  .delete-message{
+    @apply -mt-4 -mr-7 ml-1
+  }
+}

@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 
 @import "../../components/message_component/message_component";
+@import "../../components/delete_message_component/delete_message_component";
  /*base links inputs and buttons*/
  @layer components {
   .link{

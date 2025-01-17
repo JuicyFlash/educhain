@@ -1,2 +1,3 @@
-.message id="message-#{@id}"
-  = @text
+.message.flex id="message-#{@id}"
+  = @text    
+  = render DeleteMessageComponent.new(message: @message)
