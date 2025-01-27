@@ -1,9 +1,10 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ show edit update destroy ]
+  before_action :set_message, only: %i[ destroy ]
 
   # GET /messages or /messages.json
   def index
     @messages = Message.all
+    @message = Message.new
   end
 
   # GET /messages/1 or /messages/1.json
@@ -25,23 +26,10 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: "Message was successfully created." }
+        format.html { redirect_to messages_path({ turbo: @turbo_param }), notice: "Сообщение создано." }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /messages/1 or /messages/1.json
-  def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html { redirect_to @message, notice: "Message was successfully updated." }
-        format.json { render :show, status: :ok, location: @message }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
@@ -52,7 +40,7 @@ class MessagesController < ApplicationController
     @message.destroy!
 
     respond_to do |format|
-      format.html { redirect_to messages_path, status: :see_other, notice: "Message was successfully destroyed." }
+      format.html { redirect_to messages_path({ turbo: @turbo_param }), status: :see_other, notice: "Сообщение удалено." }
       format.json { head :no_content }
     end
   end
