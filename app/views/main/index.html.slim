@@ -1,2 +1,8 @@
-h1
-   = "HelloRails"
+div data-controller="clipboard"
+  input data-clipboard-target="source" type="text" value="Текст для копирования" readonly = true
+  button data-action="clipboard#copy"
+    = "Copy to Clipboard"
+div data-controller="clipboard"
+  input data-clipboard-target="source" type="text" value="Другой текст для копирования" readonly = true
+  button data-action="clipboard#copy"
+    = "Copy to Clipboard"
