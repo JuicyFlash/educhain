@@ -3,6 +3,7 @@ PATH
   specs:
     component_engine (0.1.0)
       rails (>= 8.0.1)
+      tailwindcss-rails
       view_component
 
 GEM
@@ -325,6 +326,16 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.2)
+    tailwindcss-rails (4.0.0)
+      railties (>= 7.0.0)
+      tailwindcss-ruby (~> 4.0)
+    tailwindcss-ruby (4.0.3)
+    tailwindcss-ruby (4.0.3-aarch64-linux-gnu)
+    tailwindcss-ruby (4.0.3-aarch64-linux-musl)
+    tailwindcss-ruby (4.0.3-arm64-darwin)
+    tailwindcss-ruby (4.0.3-x86_64-darwin)
+    tailwindcss-ruby (4.0.3-x86_64-linux-gnu)
+    tailwindcss-ruby (4.0.3-x86_64-linux-musl)
     thor (1.3.2)
     thruster (0.1.9)
     thruster (0.1.9-aarch64-linux)
